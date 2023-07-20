@@ -1,0 +1,12 @@
+version: '2.0'
+services:
+ eventbus:
+  image: "dnif/eventbus:v9"
+  restart: unless-stopped
+  network_mode: "host"
+  hostname: eventbus
+  cap_add:
+   - NET_ADMIN
+  volumes:
+   - /DNIF/EB:/dnif
+  container_name: eventbus-v9
